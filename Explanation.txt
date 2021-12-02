@@ -1,0 +1,39 @@
+Explanation:
+The set command sets a variable to a value.
+set /p asks for user's input
+p is for prompt
+set /a deals with math
+a is for arithmetic
+
+Usage:
+@echo off
+        ::Stop displaying commands.
+set year=2016
+        ::Variable year is 2016.
+        ::This is set in the program.
+set /p name=Please enter your name: 
+        ::Ask the user for their name.
+        ::Note that the user, not the program, sets what value name is.
+set /p age=How old are you? 
+        ::Ask the user for their age.
+        ::Same thing here.
+:inthirtyyears
+        ::This is a label.
+        ::In this case, it is only a "comment".
+set /a year+=30
+        ::Set year equal to its old value (2016) plus the value 30. (2046)
+        ::Note that this is set in the program.
+cls
+        ::Clear the screen
+set /a newage=age+30
+        ::Set newage equal to the value of age plus the value 30
+        ::Same thing here.
+echo/In 30 years, you (%name%) will be %newage% years old. %year%
+        ::Echos "In 30 years, you (user's name) will be (user's age + 30) years old. 2046"
+        ::Note that echo has a / after it. This is acceptable.
+<nul set /p=Isn't that cool? &>nul pause
+        ::Two commands in one line:
+        ::<nul set /p=Isn't that cool? 
+        ::Prints "Isn't that cool? " without asking for user input. Done to not go to new line.
+        ::>nul pause
+        ::Pauses without printing "Press any key to continue . . ."
